@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>スムーズスクロールテスト</title>
+</head>
+
+<body>
+    <section class="linkList">
+        <ul>
+            <li>
+                <a href="#title1">リンク1</a>
+            </li>
+            <li>
+                <a href="#title2">リンク2</a>
+            </li>
+            <li>
+                <a href="#title3">リンク3</a>
+            </li>
+            <li>
+                <a href="#title4">リンク4</a>
+            </li>
+            <li>
+                <a href="#title5">リンク5</a>
+            </li>
+            <li>
+                <a href="#title6">リンク6</a>
+            </li>
+            <li>
+                <a href="#title7">リンク7</a>
+            </li>
+            <li>
+                <a href="#title8">リンク8</a>
+            </li>
+            <li>
+                <a href="#title9">リンク9</a>
+            </li>
+            <li>
+                <a href="#title10">リンク10</a>
+            </li>
+            <li>
+                <a href="#title11">リンク11</a>
+            </li>
+        </ul>
+    </section>
+    <h1>title</h1>
+    <section id="title1">
+        <h2>タイトル1</h2>
+        <p>test</p>
+    </section>
+    <section id="title3">
+        <h2>タイトル3</h2>
+        <p>test</p>
+    </section>
+    <section id="title4">
+        <h2>タイトル4</h2>
+        <p>test</p>
+    </section>
+    <section id="title5">
+        <h2>タイトル5</h2>
+        <p>test</p>
+    </section>
+    <section id="title6">
+        <h2>タイトル6</h2>
+        <p>test</p>
+    </section>
+    <section id="title7">
+        <h2>タイトル7</h2>
+        <p>test</p>
+    </section>
+    <section id="title8">
+        <h2>タイトル8</h2>
+        <p>test</p>
+    </section>
+    <section id="title9">
+        <h2>タイトル9</h2>
+        <p>test</p>
+    </section>
+    <section id="title10">
+        <h2>タイトル10</h2>
+        <p>test</p>
+    </section>
+    <section id="title11">
+        <h2>タイトル11</h2>
+        <p>test</p>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // #で始まるアンカーをクリックした場合に処理
+            $('a[href^="#"]').click(function () {
+                // スクロールの速度
+                var speed = 400; // ミリ秒
+                // アンカーの値取得
+                var href = $(this).attr("href");
+                // 移動先を取得
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                // 移動先を数値で取得
+                var position = target.offset().top;
+                // スムーススクロール
+                $('body,html').animate({ scrollTop: position }, speed, 'swing');
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
